@@ -11,6 +11,10 @@ import LoginLama from './LoginLama/LoginLama';
 import Dashboard from './Dashboard/Dashboard';
 import Home from './Home/Home';
 
+import ListUser from './User/ListUser';
+import BuatUser from './User/BuatUser';
+import UpdateUser from './User/UpdateUser';
+
 import ListPegawai from './Pegawai/ListPegawai'; 
 import BuatPegawai from './Pegawai/BuatPegawai';
 import UpdatePegawai from './Pegawai/UpdatePegawai';
@@ -53,7 +57,8 @@ function App() {
             {username ? (
               <>
                 <NavLink activeClassName="active" to="/dashboard">Dashboard</NavLink>
-                <NavLink activeClassName="active" to="/pegawai">ListPegawai</NavLink>
+                <NavLink activeClassName="active" to="/user">Pengguna</NavLink>
+                <NavLink activeClassName="active" to="/pegawai">Pegawai</NavLink>
               </>
             ) : (
               <>
@@ -76,6 +81,10 @@ function App() {
             {username ? (
               <>
                 <Route path="/dashboard" element={<Dashboard/>}/>
+                
+                <Route path="/user" element={<ListUser/>}/>
+                <Route path="/buatUser" element={<BuatUser/>}/>
+                <Route path="/updateUser/:id" element={<UpdateUser/>}/>
 
                 <Route path="/pegawai" element={<ListPegawai/>}/>
                 <Route path="/buatPegawai" element={<BuatPegawai/>}/>
